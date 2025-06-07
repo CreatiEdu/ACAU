@@ -1,6 +1,6 @@
 import getpass
 
-# --- Datos simulados (base de usuarios) ---
+# Simulación de usuarios
 usuarios = [
     {"usuario": "Dolo", "nombre": "Dolores_Fernandez", "contrasena": "1234", "rol": "estandar"},
     {"usuario": "Fran", "nombre": "Franco_Fernandez", "contrasena": "1234", "rol": "estandar"},
@@ -8,18 +8,18 @@ usuarios = [
     {"usuario": "Mati", "nombre": "Matias_Rodriguez", "contrasena": "1234", "rol": "admin"},
     {"usuario": "Ale", "nombre": "Ale_Gariglio", "contrasena": "1234", "rol": "admin"}
 ]
-# --- Funciones auxiliares ---
+# Ver datos personales 
 def mostrar_datos_personales(usuario):
     print(f"\n Tus datos:")
     print(f"Nombre: {usuario['nombre']}")
     print(f"Usuario: {usuario['usuario']}")
     print(f"Rol: {usuario['rol']}\n")
-
+# Ver lista de todos los usuarios
 def mostrar_usuarios():
     print("\n Lista de usuarios registrados:")
     for u in usuarios:
         print(f"- {u['usuario']} ({u['rol']})")
-
+#cambiar rol
 def cambiar_rol():
     target = input("Ingrese el nombre de usuario a cambiar rol: ")
     for u in usuarios:
@@ -32,7 +32,7 @@ def cambiar_rol():
                 print("X Rol no válido.")
             return
     print("X Usuario no encontrado.")
-
+# Eliminar usuario
 def eliminar_usuario():
     target = input("Ingrese el nombre de usuario a eliminar: ")
     for u in usuarios:
@@ -42,7 +42,7 @@ def eliminar_usuario():
             return
     print("X Usuario no encontrado.")
 
-# --- Login ---
+# Login
 usuario_autenticado = None
 
 print("Seleccione el tipo de Usuario: ")
@@ -72,7 +72,7 @@ while usuario_autenticado is None:
     if usuario_autenticado is None:
         print("X Usuario o contraseña incorrectos. Intente nuevamente.\n")
 
-# --- Menú según rol ---
+# Menú según rol
 while True:
     print("\n--- MENÚ ---")
 
