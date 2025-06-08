@@ -1,36 +1,34 @@
+import os
+import subprocess
 import getpass
+import variables
+import menu
 
-# Variables base
-DemoUser = "User"
-DemoPass = "1234"
-IsOk = True
-IsUser = False
-#
-while IsUser == False:
-# Ingesar el tipo de Usuario
+# Login
+usuario_autenticado = None
+# Autenticación
+while usuario_autenticado is None:
     print("Seleccione el tipo de Usuario: ")
     print("1. Administrador")
-    print("2. Usuario")
-    UserType = int(input("Ingrese el número de opción: "))
-    if UserType == 1:
+    print("2. Usuario Estándar")
+
+    UserType = (input("Ingrese el número de opción: "))
+    if UserType == "1":
         print("Administrador")
-        IsOk=False
-    elif UserType == 2:
+        tipo_usuario="Administrador"
+    elif UserType == "2":
         print("Usuario")
-        IsOk=False
+        tipo_usuario="Usuario"
     else:
         print("Error: Opción no válida. Intente nuevamente")
         print("")
-    
-    while IsOk == False:
-    # Ingresar el Usuario
-        User = input("Ingrese el Nombre de Usuario: ")
-        # Ingresar la Contraseña
-        Password = getpass.getpass("Ingrese la Contraseña:")
-        if User == DemoUser and Password == DemoPass and (UserType == 1 or UserType == 2):
-            print("Bienvenido")
-            IsUser=True
-        else:
-            print("Error: El Usuario o la Contraseña son incorrectos. Intente nuevamente")
-        
-        IsOk = True
+    nombre_usuario = input("Ingrese el Nombre de Usuario: ")
+    contrasena = getpass.getpass("Ingrese la Contraseña:")
+    for u in variables.usuarios:
+        if u["usuario"] == nombre_usuario and u["contrasena"] == contrasena and u["rol"] == tipo_usuario:
+            usuario_autenticado = u
+            print(f"\n Bienvenido {u['nombre']} ({u['rol']})")
+            subprocess.run(menu.main(usuario_autenticado))
+            break
+    if usuario_autenticado is None:
+        print("X Usuario o contraseña incorrectos. Intente nuevamente.\n")
