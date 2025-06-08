@@ -31,7 +31,8 @@ CREATE TABLE `usuarios` (
   PRIMARY KEY (`id_usuario`),
   UNIQUE KEY `usuario` (`usuario`),
   KEY `id_rol` (`id_rol`),
-  CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`id_rol`) REFERENCES `roles` (`id_rol`)
+  FOREIGN KEY (`id_rol`) REFERENCES `roles` (`id_rol`),
+  CONSTRAINT chk_longitud_contraseña CHECK (CHAR_LENGTH(contraseña) >= 6))
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
