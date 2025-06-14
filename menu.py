@@ -11,7 +11,7 @@ def mostrar_datos_personales(usuario):
 def mostrar_usuarios():
     print("\n Lista de usuarios registrados:")
     for u in variables.usuarios:
-        print(f"- {u['usuario']} ({u['rol']})")
+        print(f" {u['usuario']} - {u['nombre']} ({u['rol']})")
 #cambiar rol
 def cambiar_rol():
     target = input("Ingrese el nombre de usuario a cambiar rol: ")
