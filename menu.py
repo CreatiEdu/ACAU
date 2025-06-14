@@ -34,6 +34,15 @@ def eliminar_usuario():
             print("Usuario eliminado.")
             return
     print("X Usuario no encontrado.")
+# Agregar usuario
+def agregar_usuario():
+    nombre = input("Nombre: ")
+    usuario = input("Usuario: ")
+    contrasena = getpass.getpass("Contraseña: ")
+    rol = input("Rol (Administrador/Usuario): ")
+    if rol not in ["Administrador", "Usuario"]:
+        print("X Rol no válido.")
+        return
 
 def main(usuario_autenticado):
     # Menú según rol
