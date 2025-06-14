@@ -29,8 +29,8 @@ def main():
             if u["usuario"] == nombre_usuario and u["contrasena"] == contrasena and u["rol"] == tipo_usuario:
                 usuario_autenticado = u
                 print(f"\n Bienvenido {u['nombre']} ({u['rol']})")
-                subprocess.run(menu.main(usuario_autenticado))
-                break
+                menu.main(usuario_autenticado)
+                pass
         if usuario_autenticado is None:
             print("X Usuario o contraseña incorrectos. Intente nuevamente.\n")
 

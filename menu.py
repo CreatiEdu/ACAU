@@ -47,8 +47,9 @@ def agregar_usuario():
         print("X Rol no válido.")
 
 def main(usuario_autenticado):
+    flag = True
     # Menú según rol
-    while True:
+    while flag:
         print("\n--- MENÚ ---")
 
         if usuario_autenticado["rol"] == "Administrador":
@@ -70,7 +71,8 @@ def main(usuario_autenticado):
                 eliminar_usuario()
             elif opcion == "5":
                 print("Sesión cerrada.")
-                break
+                flag = False
+                pass
             else:
                 print("Opción inválida.")
 
@@ -84,6 +86,7 @@ def main(usuario_autenticado):
                 mostrar_datos_personales(usuario_autenticado)
             elif opcion == "2":
                 print("Sesión cerrada.")
-                break
+                flag = False
+                pass
             else:
                 print("Opción inválida.")

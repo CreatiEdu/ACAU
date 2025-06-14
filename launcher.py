@@ -12,7 +12,7 @@ def main():
         if opcion == '1':
             agregar_usuario()
         elif opcion == '2':
-            subprocess.run(login.main())
+            login.main()
         elif opcion == '3':
             print("Sesión terminada.")
             break
