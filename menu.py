@@ -41,10 +41,11 @@ def main(usuario_autenticado):
         print("\n--- MENÚ ---")
 
         if usuario_autenticado["rol"] == "Administrador":
-            print("1. Ver lista de usuarios")
-            print("2. Cambiar rol de un usuario")
-            print("3. Eliminar un usuario")
-            print("4. Cerrar sesión")
+            print("1. Ver lista de Usuarios")
+            print("2. Cambiar rol de un Usuario")
+            print("3. Agregar un Usuario")
+            print("4. Eliminar un Usuario")
+            print("5. Cerrar sesión")
 
             opcion = input("Seleccione una opción: ")
 
@@ -53,8 +54,10 @@ def main(usuario_autenticado):
             elif opcion == "2":
                 cambiar_rol()
             elif opcion == "3":
-                eliminar_usuario()
+                agregar_usuario()
             elif opcion == "4":
+                eliminar_usuario()
+            elif opcion == "5":
                 print("Sesión cerrada.")
                 break
             else:
