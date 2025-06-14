@@ -40,9 +40,11 @@ def agregar_usuario():
     usuario = input("Usuario: ")
     contrasena = getpass.getpass("Contraseña: ")
     rol = input("Rol (Administrador/Usuario): ")
-    if rol not in ["Administrador", "Usuario"]:
+    if rol in ["Administrador", "Usuario"]:
+        variables.usuarios.append({"nombre": nombre, "usuario": usuario, "contrasena": contrasena, "rol": rol})
+        print("Usuario agregado.")
+    else:
         print("X Rol no válido.")
-        return
 
 def main(usuario_autenticado):
     # Menú según rol
