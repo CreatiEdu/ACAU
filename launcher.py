@@ -1,5 +1,4 @@
 from menu import agregar_usuario
-import subprocess
 import login
 
 def main():
