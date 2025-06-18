@@ -1,0 +1,6 @@
+id_usuario,usuario,nombre,contrasena,id_rol
+1,Dolo,"Dolores Fernandez ",1234,2
+2,Mati,"Matias Rodriguez",1234,1
+3,Lore,"Lorena Figueroa",1234,2
+4,Ale,"Alejandro Gariglio",1234,1
+5,Fran,"Franco Fernandez",1234,2
